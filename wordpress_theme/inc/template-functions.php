@@ -1,58 +1,91 @@
 <?php
 /**
- * Template functions for AFChem theme
+ * Template Functions
+ * Helper functions for template parts
  */
 
-/**
- * Custom comment callback
- */
-function afchem_comment_callback($comment, $args, $depth) {
-    $tag = ($args['style'] === 'div') ? 'div' : 'li';
-    ?>
-    <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
-        <article class="comment-body bg-muted/30 rounded-lg p-6">
-            <header class="comment-meta flex items-center space-x-4 mb-4">
-                <div class="comment-author-avatar">
-                    <?php echo get_avatar($comment, 48, '', '', array('class' => 'rounded-full')); ?>
-                </div>
-                <div class="comment-metadata">
-                    <span class="comment-author font-semibold"><?php comment_author(); ?></span>
-                    <time class="comment-time text-sm text-muted-foreground block" datetime="<?php comment_time('c'); ?>">
-                        <?php comment_date(); ?> at <?php comment_time(); ?>
-                    </time>
-                </div>
-            </header>
-
-            <div class="comment-content">
-                <?php comment_text(); ?>
-            </div>
-
-            <footer class="comment-actions mt-4">
-                <?php
-                comment_reply_link(array_merge($args, array(
-                    'add_below' => 'comment',
-                    'depth'     => $depth,
-                    'max_depth' => $args['max_depth'],
-                    'class'     => 'text-sm text-primary hover:underline'
-                )));
-                ?>
-            </footer>
-        </article>
-    <?php
+// Get social media links
+function afchem_get_social_links() {
+    return array(
+        'facebook' => get_theme_mod('facebook_url', '#'),
+        'twitter' => get_theme_mod('twitter_url', '#'),
+        'linkedin' => get_theme_mod('linkedin_url', '#'),
+        'instagram' => get_theme_mod('instagram_url', '#'),
+    );
 }
 
-/**
- * Register widget areas
- */
-function afchem_widgets_init() {
-    register_sidebar(array(
-        'name'          => __('Sidebar', 'afchem'),
-        'id'            => 'sidebar-1',
-        'description'   => __('Add widgets here.', 'afchem'),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ));
+// Get company stats
+function afchem_get_company_stats() {
+    return array(
+        array(
+            'number' => '15+',
+            'label' => 'Years Experience',
+            'icon' => 'calendar'
+        ),
+        array(
+            'number' => '500+',
+            'label' => 'Products',
+            'icon' => 'package'
+        ),
+        array(
+            'number' => '50+',
+            'label' => 'Countries',
+            'icon' => 'globe'
+        ),
+        array(
+            'number' => '1000+',
+            'label' => 'Happy Clients',
+            'icon' => 'users'
+        )
+    );
 }
-add_action('widgets_init', 'afchem_widgets_init');
+
+// Get product categories
+function afchem_get_product_categories() {
+    return array(
+        array(
+            'title' => 'Natural Extracts',
+            'description' => 'Premium plant-based extracts for food and beverage applications.',
+            'image' => 'food-powder.jpg',
+            'features' => array('100% Natural', 'High Purity', 'Quality Tested')
+        ),
+        array(
+            'title' => 'Functional Ingredients',
+            'description' => 'Specialized ingredients that enhance nutritional value and functionality.',
+            'image' => 'food-strips.jpg',
+            'features' => array('Health Benefits', 'Research-Backed', 'Custom Solutions')
+        ),
+        array(
+            'title' => 'Pharma Grade',
+            'description' => 'Pharmaceutical-grade ingredients meeting the highest quality standards.',
+            'image' => 'pharma-grade.jpg',
+            'features' => array('GMP Certified', 'USP Grade', 'Regulatory Compliant')
+        )
+    );
+}
+
+// Get certifications
+function afchem_get_certifications() {
+    return array(
+        array(
+            'name' => 'ISO 22000',
+            'description' => 'Food Safety Management System',
+            'icon' => 'shield-check'
+        ),
+        array(
+            'name' => 'HACCP',
+            'description' => 'Hazard Analysis Critical Control Points',
+            'icon' => 'check-circle'
+        ),
+        array(
+            'name' => 'GMP',
+            'description' => 'Good Manufacturing Practice',
+            'icon' => 'award'
+        ),
+        array(
+            'name' => 'Organic',
+            'description' => 'Certified Organic Products',
+            'icon' => 'leaf'
+        )
+    );
+}

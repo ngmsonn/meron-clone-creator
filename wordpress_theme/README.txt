@@ -1,63 +1,53 @@
 === AFChem - Asia Food Chemical ===
 
 Contributors: AFChem Development Team
-Tags: business, corporate, food, biotech, clean, modern, responsive
+Tags: business, corporate, food, biotech, one-page, responsive, custom-logo, custom-menu, theme-options
 Requires at least: 5.0
 Tested up to: 6.4
 Requires PHP: 7.4
 Stable tag: 1.0.0
-License: GPL v2 or later
+License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Professional B2B corporate WordPress theme for food and biotech companies.
+Professional B2B corporate WordPress theme for food and biotech companies with modern design and customizable sections.
 
 == Description ==
 
-AFChem is a modern, professional WordPress theme designed specifically for food and biotech companies. It features a clean design, responsive layout, and powerful customization options perfect for B2B corporate websites.
+AFChem is a professional, modern WordPress theme designed specifically for food and biotech companies. It features a clean, responsive design with customizable sections perfect for showcasing products, services, and company information.
 
 Key Features:
-* Responsive design that works on all devices
-* Customizable hero section with dynamic content
-* Product showcase sections
-* Professional color scheme
-* SEO optimized
-* Fast loading
-* Cross-browser compatibility
-* Custom post types for products, applications, and certifications
+* One-page responsive design
+* Custom post types for Products, Applications, and Certifications
 * WordPress Customizer integration
+* Modern animations and effects
+* Tailwind CSS styling
+* Mobile-responsive navigation
+* SEO optimized
+* Translation ready
 
 == Installation ==
 
-1. Upload the theme files to the `/wp-content/themes/afchem` directory
-2. Activate the theme through the 'Appearance > Themes' screen in WordPress
-3. Go to Appearance > Customize to set up your site
+1. Upload the theme files to the `/wp-content/themes/afchem` directory, or install the theme through the WordPress themes screen directly.
+2. Activate the theme through the 'Appearance > Themes' screen in WordPress.
+3. Use the Customizer to configure theme options and content.
 
 == Frequently Asked Questions ==
 
-= Does this theme support custom post types? =
+= Does this theme support custom menus? =
+Yes, the theme supports custom menus in the header and footer areas.
 
-Yes, the theme includes custom post types for Products, Applications, and Certifications.
-
-= Is this theme responsive? =
-
-Yes, the theme is fully responsive and works on all devices.
+= Is the theme responsive? =
+Yes, the theme is fully responsive and mobile-friendly.
 
 = Can I customize the colors? =
-
-Yes, you can customize colors through the WordPress Customizer.
+Yes, you can customize colors through the WordPress Customizer and CSS variables.
 
 == Changelog ==
 
 = 1.0.0 =
 * Initial release
-* Hero section with customizable content
-* Product showcase
-* Applications section
-* Certifications display
-* Custom post types
-* WordPress Customizer integration
 
 == Credits ==
 
-* Tailwind CSS for styling framework
-* WordPress for the amazing CMS platform
+* Tailwind CSS - https://tailwindcss.com/
+* WordPress - https://wordpress.org/

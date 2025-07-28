@@ -40,6 +40,99 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/custom-post-types.php';
 
+// Customizer settings
+function afchem_customize_register($wp_customize) {
+    // Hero Section
+    $wp_customize->add_section('hero_section', array(
+        'title' => __('Hero Section', 'afchem'),
+        'priority' => 30,
+    ));
+    
+    $wp_customize->add_setting('hero_badge_text', array(
+        'default' => 'Leading Vietnamese Natural Ingredients Company',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('hero_badge_text', array(
+        'label' => __('Hero Badge Text', 'afchem'),
+        'section' => 'hero_section',
+        'type' => 'text',
+    ));
+    
+    $wp_customize->add_setting('hero_title_highlight', array(
+        'default' => 'Encapsulating Nature',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('hero_title_highlight', array(
+        'label' => __('Hero Title Highlight', 'afchem'),
+        'section' => 'hero_section',
+        'type' => 'text',
+    ));
+    
+    $wp_customize->add_setting('hero_title_main', array(
+        'default' => 'Empowering Healthy Living',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('hero_title_main', array(
+        'label' => __('Hero Title Main', 'afchem'),
+        'section' => 'hero_section',
+        'type' => 'text',
+    ));
+    
+    $wp_customize->add_setting('hero_description', array(
+        'default' => 'Asia Food Chemical (AFChem) is a leading Vietnamese company specializing in natural food ingredients. We offer full-stack R&D, manufacturing, OEM/ODM, and international distribution services.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    
+    $wp_customize->add_control('hero_description', array(
+        'label' => __('Hero Description', 'afchem'),
+        'section' => 'hero_section',
+        'type' => 'textarea',
+    ));
+    
+    // Company Information
+    $wp_customize->add_section('company_info', array(
+        'title' => __('Company Information', 'afchem'),
+        'priority' => 35,
+    ));
+    
+    $wp_customize->add_setting('company_email', array(
+        'default' => 'info@afchem.vn',
+        'sanitize_callback' => 'sanitize_email',
+    ));
+    
+    $wp_customize->add_control('company_email', array(
+        'label' => __('Company Email', 'afchem'),
+        'section' => 'company_info',
+        'type' => 'email',
+    ));
+    
+    $wp_customize->add_setting('company_phone', array(
+        'default' => '+84 (0) 123 456 789',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('company_phone', array(
+        'label' => __('Company Phone', 'afchem'),
+        'section' => 'company_info',
+        'type' => 'text',
+    ));
+    
+    $wp_customize->add_setting('company_address', array(
+        'default' => 'Ho Chi Minh City, Vietnam',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('company_address', array(
+        'label' => __('Company Address', 'afchem'),
+        'section' => 'company_info',
+        'type' => 'text',
+    ));
+}
+add_action('customize_register', 'afchem_customize_register');
+
 // Custom Navigation Walker for Header
 class Custom_Nav_Walker extends Walker_Nav_Menu {
     function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {

@@ -1,8 +1,15 @@
 /*
 Theme Name: AFChem - Asia Food Chemical
-Description: Professional B2B corporate WordPress theme for food and biotech companies
+Description: Professional B2B corporate WordPress theme for food and biotech companies. One-page responsive design with modern animations and customizable sections.
 Version: 1.0.0
 Author: AFChem Development Team
+Text Domain: afchem
+Requires at least: 5.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, custom-logo, custom-menu, featured-images, theme-options, translation-ready, business, corporate, food, biotech
 */
 
 /* Import Tailwind CSS */
